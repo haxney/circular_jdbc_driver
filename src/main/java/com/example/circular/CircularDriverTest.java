@@ -14,12 +14,10 @@ import net.bytebuddy.description.type.TypeDescription;
 import net.bytebuddy.dynamic.ClassFileLocator;
 import net.bytebuddy.pool.TypePool;
 
-/**
- * Illustrates the problem present in Sybase's driver
- */
+/** Illustrates the problem present in Sybase's driver. */
 public class CircularDriverTest {
 
-    private static final String DRIVER_NAME = "com.example.circular.jdbc.CircularDriver";
+  private static final String DRIVER_NAME = "com.example.circular.jdbc.CircularDriver";
 
   public static class SkipAdvice {
     @Advice.OnMethodEnter(skipOn = SkipAdvice.class)
